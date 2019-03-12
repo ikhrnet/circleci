@@ -5,9 +5,6 @@ jobs:
       image: circleci/classic:edge
     steps:
       - run:
-          name: Create an empty file
-          command: touch empty.txt
-      - run:
-          name: Confirm how checksum works
-          command: echo {{ checksum ~/empty.txt }}
+          name: Check CIRCLE_BRANCH
+          command: echo ${CIRCLE_BRANCH}
 

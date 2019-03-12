@@ -5,6 +5,9 @@ jobs:
       image: circleci/classic:edge
     steps:
       - run:
-          name: Check entries in the home directory
-          command: ls -l ~
+          name: Create an empty file
+          command: touch empty.txt
+      - run:
+          name: Confirm how checksum works
+          command: echo {{ checksum ~/empty.txt }}
 

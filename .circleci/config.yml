@@ -4,5 +4,8 @@ jobs:
     machine:
       image: circleci/classic:edge
     steps:
-      - run: echo "Hello World!"
+      - run: whoami
+      - run: hostname
+      - run: ls ~
+      - run: ls ~/caches
 

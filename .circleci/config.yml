@@ -5,6 +5,6 @@ jobs:
       image: circleci/classic:edge
     steps:
       - run:
-        name: Check the user name
-        command: whoami
+          name: Check the user name
+          command: whoami
 

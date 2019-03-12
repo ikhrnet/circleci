@@ -5,6 +5,12 @@ jobs:
       image: circleci/classic:edge
     steps:
       - run:
-          name: Check the user name
-          command: whoami
+          name: Check entries in the home directory
+          command: ls -l ~
+      - run:
+          name: Create a directory
+          command: mkdir -p circleci-test
+      - run:
+          name: Create an empty file
+          command: touch circleci-test/empty.txt
 

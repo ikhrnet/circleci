@@ -1,9 +1,9 @@
 version: 2
 jobs:
   build:
-    - machine:
+    machine:
       image: circleci/classic:edge
-    - steps:
+    steps:
       - run:
         name: Check the user name
         command: whoami

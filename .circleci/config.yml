@@ -7,10 +7,4 @@ jobs:
       - run:
         name: Check the user name
         command: whoami
-      - run:
-        name: Check the host name
-        command: hostname
-      - run:
-        name: Check the root directory
-        command: ls ~
 

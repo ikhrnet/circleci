@@ -1,11 +1,16 @@
 version: 2
 jobs:
   build:
-    machine:
+    - machine:
       image: circleci/classic:edge
-    steps:
-      - run: whoami
-      - run: hostname
-      - run: ls ~
-      - run: ls ~/caches
+    - steps:
+      - run:
+        name: Check the user name
+        command: whoami
+      - run:
+        name: Check the host name
+        command: hostname
+      - run:
+        name: Check the root directory
+        command: ls ~
 

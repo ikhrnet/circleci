@@ -4,5 +4,5 @@ jobs:
     machine:
       image: circleci/classic:edge
     steps:
-      run: echo "hello world"
+      - run: echo "hello world"
 

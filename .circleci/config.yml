@@ -29,6 +29,5 @@ jobs:
           name: Check Node version
           command: |
             \. /opt/circleci/.nvm/nvm.sh
-            nvm alias default v12.14.1
             node -v
             npm -v

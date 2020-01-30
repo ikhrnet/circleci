@@ -16,3 +16,19 @@ jobs:
       - run:
           name: Check files and folders at /opt/circleci
           command: ls -la /opt/circleci
+      - run:
+          name: Check files and folders at /opt/circleci/.nvm
+          command: ls -la /opt/circleci/.nvm
+      - run:
+          name: Install Node
+          command: |
+            cd /opt/circleci/.nvm
+            \. /opt/circleci/.nvm/nvm.sh
+            nvm install v12.14.1
+            nvm alias default v12.14.1
+      - run:
+          name: Check Node version
+          command: node -v
+      - run:
+          name: Check npm version
+          command: npm -v

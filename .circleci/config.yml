@@ -7,4 +7,12 @@ jobs:
       - run:
           name: Check CIRCLE_BRANCH
           command: echo ${CIRCLE_BRANCH}
-
+      - run:
+          name: Check Node version
+          command: node -v
+      - run:
+          name: Check npm version
+          command: npm -v
+      - run:
+          name: Check files and folders at /opt/circleci
+          command: ls -la /opt/circleci

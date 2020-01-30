@@ -24,6 +24,7 @@ jobs:
           command: |
             \. /opt/circleci/.nvm/nvm.sh
             nvm install v12.14.1
+            nvm alias default v12.14.1
       - run:
           name: Check Node version
           command: |

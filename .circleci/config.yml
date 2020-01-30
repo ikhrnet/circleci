@@ -8,17 +8,15 @@ jobs:
           name: Check CIRCLE_BRANCH
           command: echo ${CIRCLE_BRANCH}
       - run:
-          name: Check Node version
-          command: node -v
-      - run:
-          name: Check npm version
-          command: npm -v
+          name: Check Node and npm versions
+          command: |
+            node -v
+            npm -v
       - run:
           name: Check files and folders at /opt/circleci
-          command: ls -la /opt/circleci
-      - run:
-          name: Check files and folders at /opt/circleci/.nvm
-          command: ls -la /opt/circleci/.nvm
+          command: |
+            ls -la /opt/circleci
+            ls -la /opt/circleci/.nvm
       - run:
           name: Install Node
           command: |
@@ -26,7 +24,7 @@ jobs:
             nvm install v12.14.1
             nvm alias default v12.14.1
       - run:
-          name: Check Node version
+          name: Check Node and npm versions
           command: |
             \. /opt/circleci/.nvm/nvm.sh
             node -v

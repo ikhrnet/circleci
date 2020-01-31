@@ -5,30 +5,27 @@ jobs:
       image: circleci/classic:edge
     steps:
       - run:
-          name: Check CIRCLE_BRANCH
-          command: echo ${CIRCLE_BRANCH}
-      - run:
-          name: Check content of $BASH_ENV
-          command: cat $BASH_ENV
-      - run:
           name: Check Node and npm versions
           command: |
             node -v
             npm -v
       - run:
-          name: Check files and folders at /opt/circleci
+          name: Write environment variables into $BASH_ENV
           command: |
-            ls -la /opt/circleci
-            ls -la /opt/circleci/.nvm
+            echo 'export NVM_DIR=/opt/circleci/.nvm' >> $BASH_ENV
+            echo '[ -s $NVM_DIR/nvm.sh ] && \. $NVM_DIR/nvm.sh' >> $BASH_ENV
+      - run:
+          name: Check nvm path
+          command: which nvm
       - run:
           name: Install Node
           command: |
-            \. /opt/circleci/.nvm/nvm.sh
-            nvm install v12.14.1
-            nvm alias default v12.14.1
+            # \. /opt/circleci/.nvm/nvm.sh
+            nvm install v12
+            nvm alias default v12
       - run:
           name: Check Node and npm versions
           command: |
-            \. /opt/circleci/.nvm/nvm.sh
+            # \. /opt/circleci/.nvm/nvm.sh
             node -v
             npm -v

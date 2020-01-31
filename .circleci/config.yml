@@ -8,6 +8,9 @@ jobs:
           name: Check CIRCLE_BRANCH
           command: echo ${CIRCLE_BRANCH}
       - run:
+          name: Check content of $BASH_ENV
+          command: cat $BASH_ENV
+      - run:
           name: Check Node and npm versions
           command: |
             node -v
